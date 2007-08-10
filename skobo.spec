@@ -2,7 +2,7 @@ Summary:	Kobo Deluxe is an SDL port of Akira Higuchi's game XKobo
 Name:		skobo
 Version:	0.4
 %define pre	pre10
-%define release %mkrel 0.%{pre}.7
+%define release %mkrel 0.%{pre}.8
 Release:	%{release}
 License:	GPL
 Group:		Games/Arcade
