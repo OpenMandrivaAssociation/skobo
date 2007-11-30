@@ -1,18 +1,17 @@
 Summary:	Kobo Deluxe is an SDL port of Akira Higuchi's game XKobo 
 Name:		skobo
-Version:	0.4
-%define pre	pre10
-%define release %mkrel 0.%{pre}.8
+Version:	0.4.1
+%define release %mkrel 1
 Release:	%{release}
 License:	GPL
 Group:		Games/Arcade
 URL:		http://www.olofson.net/kobodl/
-Source0:	http://olofson.net/kobodl/download/KoboDeluxe-%{version}%{pre}.tar.bz2
+Source0:	http://olofson.net/kobodl/download/KoboDeluxe-%{version}.tar.bz2
 Source5:	%{name}-16.png
 Source6:	%{name}-32.png
 Source7:	%{name}-48.png
 Patch0:		skobo-0.4pre10-gcc4.patch.bz2
-Patch1:		skobo-0.4pre10-various-from-debian.patch
+Patch1:		KoboDeluxe-0.4.1-various-from-debian.patch
 Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch.bz2
 BuildRequires: SDL_image-devel
 BuildRoot: %{_tmppath}/%{name}-root
@@ -26,10 +25,10 @@ libraries SDL and SDL_image, which can be downloaded (source as well as
 binaries for various platforms) from http://www.libsdl.org.
 
 %prep
-%setup -q -n KoboDeluxe-%{version}%{pre}
+%setup -q -n KoboDeluxe-%{version}
 %patch0 -p0 -b .gcc4
 %patch1 -p1
-%patch2 -p1 -z .pix
+%patch2 -p1
 
 %build
 %configure2_5x	--bindir=%{_gamesbindir}
@@ -82,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING* ChangeLog README* TODO
 %attr(2755, root, games) %{_gamesbindir}/kobodl
 %attr(775, root, games) %{_localstatedir}/games/%{name}
-%{_gamesdatadir}/*
+%{_datadir}/kobo-deluxe
 %{_mandir}/man6/*
 %{_datadir}/applications/*
 %{_menudir}/*
