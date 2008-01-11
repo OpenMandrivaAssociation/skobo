@@ -39,17 +39,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_localstatedir}/games/%{name}
 %makeinstall_std kobo_scoredir=%{_localstatedir}/games/%{name}
 
-mkdir -p %buildroot%_menudir
-cat > %buildroot%_menudir/%name << EOF
-?package(%name):\
-	needs="x11"\
-	section="More Applications/Games/Arcade"\
-	title="Kobo Deluxe"\
-	longtitle="Arcade video game"\
-	command="%_gamesbindir/kobodl"\
-	icon="%name.png"\
-	xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -84,7 +73,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kobo-deluxe
 %{_mandir}/man6/*
 %{_datadir}/applications/*
-%{_menudir}/*
 %{_iconsdir}/*.png
 %{_miconsdir}/*
 %{_liconsdir}/*
