@@ -5,6 +5,7 @@ Version:	0.4.1
 Release:	%{release}
 License:	GPL
 Group:		Games/Arcade
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://www.olofson.net/kobodl/
 Source0:	http://olofson.net/kobodl/download/KoboDeluxe-%{version}.tar.bz2
 Source5:	%{name}-16.png
