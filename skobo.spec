@@ -1,7 +1,7 @@
 Summary:	SDL port of Akira Higuchi's game XKobo 
 Name:		skobo
 Version:	0.4.1
-%define release %mkrel 2
+%define release %mkrel 3
 Release:	%{release}
 License:	GPL
 Group:		Games/Arcade
