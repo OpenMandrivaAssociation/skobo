@@ -33,12 +33,12 @@ binaries for various platforms) from http://www.libsdl.org.
 
 %build
 %configure2_5x	--bindir=%{_gamesbindir}
-%make kobo_scoredir=%{_localstatedir}/games/%{name}
+%make kobo_scoredir=%{_localstatedir}/lib/games/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_localstatedir}/games/%{name}
-%makeinstall_std kobo_scoredir=%{_localstatedir}/games/%{name}
+install -d $RPM_BUILD_ROOT%{_localstatedir}/lib/games/%{name}
+%makeinstall_std kobo_scoredir=%{_localstatedir}/lib/games/%{name}
 
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc COPYING* ChangeLog README* TODO
 %attr(2755, root, games) %{_gamesbindir}/kobodl
-%attr(775, root, games) %{_localstatedir}/games/%{name}
+%attr(775, root, games) %{_localstatedir}/lib/games/%{name}
 %{_datadir}/kobo-deluxe
 %{_mandir}/man6/*
 %{_datadir}/applications/*
