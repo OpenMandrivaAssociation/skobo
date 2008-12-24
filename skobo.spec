@@ -1,7 +1,7 @@
-Summary:	SDL port of Akira Higuchi's game XKobo 
+Summary:	SDL port of Akira Higuchis game XKobo 
 Name:		skobo
-Version:	0.4.1
-%define release %mkrel 3
+Version:	0.5.1
+%define release %mkrel 1
 Release:	%{release}
 License:	GPL
 Group:		Games/Arcade
@@ -12,7 +12,7 @@ Source5:	%{name}-16.png
 Source6:	%{name}-32.png
 Source7:	%{name}-48.png
 Patch0:		skobo-0.4pre10-gcc4.patch.bz2
-Patch1:		KoboDeluxe-0.4.1-various-from-debian.patch
+# Patch1:		KoboDeluxe-0.4.1-various-from-debian.patch
 Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch.bz2
 BuildRequires: SDL_image-devel
 BuildRequires: libmesaglu-devel
@@ -28,7 +28,7 @@ binaries for various platforms) from http://www.libsdl.org.
 %prep
 %setup -q -n KoboDeluxe-%{version}
 %patch0 -p0 -b .gcc4
-%patch1 -p1
+# %patch1 -p1
 %patch2 -p1
 
 %build
