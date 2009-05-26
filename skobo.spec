@@ -14,6 +14,7 @@ Source7:	%{name}-48.png
 Patch0:		skobo-0.4pre10-gcc4.patch.bz2
 # Patch1:		KoboDeluxe-0.4.1-various-from-debian.patch
 Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch.bz2
+Patch3:		04_enemies-pipe-decl.patch
 BuildRequires: SDL_image-devel
 BuildRequires: libmesaglu-devel
 
@@ -30,6 +31,7 @@ binaries for various platforms) from http://www.libsdl.org.
 %patch0 -p0 -b .gcc4
 # %patch1 -p1
 %patch2 -p1
+%patch3 -p1 -b .debian
 
 %build
 %configure2_5x	--bindir=%{_gamesbindir}
