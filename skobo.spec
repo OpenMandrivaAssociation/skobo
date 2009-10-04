@@ -1,8 +1,7 @@
 Summary:	SDL port of Akira Higuchis game XKobo 
 Name:		skobo
 Version:	0.5.1
-%define release %mkrel 1
-Release:	%{release}
+Release:	%mkrel 2
 License:	GPL
 Group:		Games/Arcade
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -11,12 +10,15 @@ Source0:	http://olofson.net/kobodl/download/KoboDeluxe-%{version}.tar.bz2
 Source5:	%{name}-16.png
 Source6:	%{name}-32.png
 Source7:	%{name}-48.png
-Patch0:		skobo-0.4pre10-gcc4.patch.bz2
+Patch0:		skobo-0.4pre10-gcc4.patch
 # Patch1:		KoboDeluxe-0.4.1-various-from-debian.patch
-Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch.bz2
+Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch
 Patch3:		04_enemies-pipe-decl.patch
+Patch4:		skobo-0.5.1-gcc44.patch
 BuildRequires: SDL_image-devel
 BuildRequires: libmesaglu-devel
+Provides:	KoboDeluxe = %version
+Provides:	kobodeluxe = %version
 
 %description
 Kobo Deluxe is an SDL port of Akira Higuchi's game XKobo. It adds sound,
@@ -32,6 +34,7 @@ binaries for various platforms) from http://www.libsdl.org.
 # %patch1 -p1
 %patch2 -p1
 %patch3 -p1 -b .debian
+%patch4 -p0 -b .gcc44
 
 %build
 %configure2_5x	--bindir=%{_gamesbindir}
