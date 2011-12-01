@@ -41,13 +41,13 @@ binaries for various platforms) from http://www.libsdl.org.
 %make kobo_scoredir=%{_localstatedir}/lib/games/%{name}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_localstatedir}/lib/games/%{name}
+rm -rf %{buildroot}
+install -d %{buildroot}%{_localstatedir}/lib/games/%{name}
 %makeinstall_std kobo_scoredir=%{_localstatedir}/lib/games/%{name}
 
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Kobo Deluxe
 Comment=Arcade video game
@@ -58,12 +58,12 @@ Type=Application
 Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
 EOF
 
-install -D -m644 %SOURCE6 $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-install -D -m644 %SOURCE5 $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-install -D -m644 %SOURCE7 $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
+install -D -m644 %SOURCE6 %{buildroot}%{_iconsdir}/%{name}.png
+install -D -m644 %SOURCE5 %{buildroot}%{_miconsdir}/%{name}.png
+install -D -m644 %SOURCE7 %{buildroot}%{_liconsdir}/%{name}.png
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post 
