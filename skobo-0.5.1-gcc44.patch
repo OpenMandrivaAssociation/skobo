@@ -1,0 +1,11 @@
+--- graphics/window.cpp.gcc44	2009-10-04 08:19:07.000000000 +0200
++++ graphics/window.cpp	2009-10-04 08:20:29.000000000 +0200
+@@ -398,7 +398,7 @@
+ 		 */
+ 		if(token)
+ 		{
+-			char *tok = strchr(txt, token);
++			const char *tok = strchr(txt, token);
+ 			if(tok)
+ 				tokpos = tok-txt;
+ 			else
