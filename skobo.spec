@@ -1,10 +1,9 @@
 Summary:	SDL port of Akira Higuchis game XKobo 
 Name:		skobo
 Version:	0.5.1
-Release:	10
+Release:	11
 License:	GPL
 Group:		Games/Arcade
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://www.olofson.net/kobodl/
 Source0:	http://olofson.net/kobodl/download/KoboDeluxe-%{version}.tar.bz2
 Source5:	%{name}-16.png
@@ -15,8 +14,8 @@ Patch0:		skobo-0.4pre10-gcc4.patch
 Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch
 Patch3:		04_enemies-pipe-decl.patch
 Patch4:		skobo-0.5.1-gcc44.patch
-BuildRequires: SDL_image-devel
-BuildRequires: libmesaglu-devel
+BuildRequires:	pkgconfig(SDL_image)
+BuildRequires:	pkgconfig(glu)
 Provides:	KoboDeluxe = %version
 Provides:	kobodeluxe = %version
 
