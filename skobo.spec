@@ -10,7 +10,6 @@ Source5:	%{name}-16.png
 Source6:	%{name}-32.png
 Source7:	%{name}-48.png
 Patch0:		skobo-0.4pre10-gcc4.patch
-# Patch1:		KoboDeluxe-0.4.1-various-from-debian.patch
 Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch
 Patch3:		04_enemies-pipe-decl.patch
 Patch4:		skobo-0.5.1-gcc44.patch
@@ -30,7 +29,6 @@ binaries for various platforms) from http://www.libsdl.org.
 %prep
 %setup -q -n KoboDeluxe-%{version}
 %patch0 -p0 -b .gcc4
-# %patch1 -p1
 %patch2 -p1
 %patch3 -p1 -b .debian
 %patch4 -p0 -b .gcc44
