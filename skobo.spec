@@ -1,7 +1,7 @@
 Summary:	SDL port of Akira Higuchis game XKobo 
 Name:		skobo
 Version:	0.5.1
-Release:	11
+Release:	12
 License:	GPL
 Group:		Games/Arcade
 URL:		http://www.olofson.net/kobodl/
