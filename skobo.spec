@@ -13,6 +13,11 @@ Patch0:		skobo-0.4pre10-gcc4.patch
 Patch2:		KoboDeluxe-0.4pre10-fix-segfault-in-midi.patch
 Patch3:		04_enemies-pipe-decl.patch
 Patch4:		skobo-0.5.1-gcc44.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(SDL_image)
 BuildRequires:	pkgconfig(glu)
 Provides:	KoboDeluxe = %version
